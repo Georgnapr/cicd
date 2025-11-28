@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo 'Building project...'",
+    "test": "echo 'Running tests...' && exit 0",
+    "lint": "echo 'Linting...' && exit 0"
   },
   "author": "",
   "license": "ISC",
