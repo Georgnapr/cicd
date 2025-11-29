@@ -43,7 +43,6 @@ buttonsContainer.addEventListener('click', (event) => {
     }
     if (value === '←') {
         if (currentInput) {
-            // удаляем последний символ
             currentInput = currentInput.slice(0, -1);
             display.textContent = currentInput;
         }
