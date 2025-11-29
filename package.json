@@ -1,13 +1,17 @@
 {
   "name": "cicd",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "echo 'Building project...'",
-    "test": "echo 'Running tests...' && exit 0",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "lint": "echo 'Linting...' && exit 0"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
 }
