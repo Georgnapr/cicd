@@ -30,4 +30,10 @@ describe("calculateExpression", () => {
         expect(calculateExpression(" 2 + 3 ")).toBe("5");
     });
 
+    test("удаление последнего символа", () => {
+    let currentInput = "123+4";
+    currentInput = currentInput.slice(0, -1);
+    expect(currentInput).toBe("123+");
+    });
+
 });

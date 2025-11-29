@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "echo 'Building project...'",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "lint": "echo 'Linting...' && exit 0"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "author": "",
   "license": "ISC",
