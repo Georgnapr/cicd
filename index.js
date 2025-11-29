@@ -1,4 +1,4 @@
-import { calculateExpression } from "./calculateExpression";
+import { calculateExpression } from "./calculateExpression.js";
 const display = document.querySelector('.calc__display');
 const buttonsContainer = document.querySelector('.calc__buttons');
 
@@ -6,7 +6,7 @@ const buttons = [
     '7', '8', '9', '/',
     '4', '5', '6', '*',
     '1', '2', '3', '-',
-    '0', 'C', '=', '+'
+    '0', 'C', '=', '+', '←'
 ];
 
 buttons.forEach(text => {
@@ -41,7 +41,14 @@ buttonsContainer.addEventListener('click', (event) => {
         }
         return;
     }
-
+    if (value === '←') {
+        if (currentInput) {
+            // удаляем последний символ
+            currentInput = currentInput.slice(0, -1);
+            display.textContent = currentInput;
+        }
+        return;
+    }
     if (shouldClear && /[0-9]/.test(value)) {
         currentInput = value;
         display.textContent = currentInput;
