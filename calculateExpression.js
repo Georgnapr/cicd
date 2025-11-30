@@ -1,3 +1,12 @@
+/**
+ * Вычисляет арифметическое выражение.
+ * Поддерживает +, -, *, / и скобки.
+ * Возвращает "Error" для некорректного выражения.
+ *
+ * @param {string} expr - Строка с арифметическим выражением
+ * @returns {string} - Результат вычисления или "Error"
+ */
+
 export function calculateExpression(expr) {
     if (!expr) return "";
     try {
