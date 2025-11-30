@@ -31,3 +31,7 @@ npm install
 ## CI/CD
 
 - Настроен GitHub Actions (.github/workflows/main.yaml) для автоматического тестирования и сборки при пуше или Pull Request в ветки main, development и release.
+
+## Документация
+
+- Ссылка на документацию: https://georgnapr.github.io/cicd/
