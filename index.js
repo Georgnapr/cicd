@@ -19,10 +19,14 @@ buttons.forEach(text => {
 let currentInput = '';
 let shouldClear = false;
 
-buttonsContainer.addEventListener('click', (event) => {
-    if (!event.target.classList.contains('calc__button')) return;
-
+/**
+ * Обработка нажатия кнопок и вычисления.
+ * @param {Event} event Событие клика по кнопке.
+ */
+export function handleButtonClick(event) {
     const value = event.target.textContent;
+
+    if (!event.target.classList.contains('calc__button')) return;
 
     if (value === 'C') {
         currentInput = '';
@@ -34,6 +38,7 @@ buttonsContainer.addEventListener('click', (event) => {
         try {
             currentInput = calculateExpression(currentInput);
             display.textContent = currentInput;
+            console.log("Result is: " + currentInput);
             shouldClear = true;
         } catch {
             display.textContent = 'Error';
@@ -41,6 +46,7 @@ buttonsContainer.addEventListener('click', (event) => {
         }
         return;
     }
+
     if (value === '←') {
         if (currentInput) {
             currentInput = currentInput.slice(0, -1);
@@ -48,6 +54,7 @@ buttonsContainer.addEventListener('click', (event) => {
         }
         return;
     }
+
     if (shouldClear && /[0-9]/.test(value)) {
         currentInput = value;
         display.textContent = currentInput;
@@ -58,4 +65,6 @@ buttonsContainer.addEventListener('click', (event) => {
     shouldClear = false;
     currentInput += value;
     display.textContent = currentInput;
-});
+}
+
+buttonsContainer.addEventListener('click', handleButtonClick);
