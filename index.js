@@ -66,5 +66,11 @@ export function handleButtonClick(event) {
     currentInput += value;
     display.textContent = currentInput;
 }
-
+/**
+ * Вывод 123 в консоль
+ * @param {Event} event Выводит 123 в консоль при вызове.
+ */
+function log123 () {
+    console.log('123');
+}
 buttonsContainer.addEventListener('click', handleButtonClick);
